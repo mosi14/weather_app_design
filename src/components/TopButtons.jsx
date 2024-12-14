@@ -1,4 +1,4 @@
-export default function TopButtons() {
+export default function TopButtons({ setQuery }) {
   const cities = [
     {
       id: 1,
@@ -6,7 +6,7 @@ export default function TopButtons() {
     },
     {
       id: 2,
-      name: "Sudney",
+      name: "Sydney",
     },
     {
       id: 3,
@@ -27,6 +27,7 @@ export default function TopButtons() {
         <button
           key={city.id}
           className="text-lg font-medium hover:bg-gray-700/20 px-3 py-2 rounded-md transition ease-in"
+          onClick={() => setQuery({ q: city.name })}
         >
           {city.name}
         </button>

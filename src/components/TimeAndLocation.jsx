@@ -1,14 +1,14 @@
-export default function TimeAndLocation() {
+export default function TimeAndLocation({weather: {formattedLocalTime , name, country} }) {
   return (
     <div>
       <div className="flex flex-row justify-center my-6">
         <p className="text-xl font-extralight">
-          Tuesday, 14 May 2024 | local time: 7: 04 AM
+          {formattedLocalTime}
         </p>
       </div>
       <div className="flex flex-row justify-center my-3">
         <p className="text-xl font-extralight">
-          Torino, TO
+         {` ${name}, ${country}`}
         </p>
       </div>
     </div>
