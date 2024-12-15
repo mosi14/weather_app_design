@@ -58,9 +58,9 @@ export default function TempAndDetails({
   ];
 
   return (
-    <div className="">
+    <div>
       <div>
-        <div className="flex items-center justify-center py-6 text-xl text-cyan-50">
+        <div className="flex items-center justify-center py-6 text-xl  md:text-lg lg:text-xl text-cyan-50">
           <p>{datails}</p>
         </div>
         <div className="flex flex-row justify-between items-center py-3">
@@ -70,7 +70,7 @@ export default function TempAndDetails({
             {verticalDetails.map(({ id, title, Icon, value }) => (
               <div
                 key={`vertical_${id}`}
-                className="flex font-light text-sm justify-center items-start"
+                className="flex font-light text-sm md:text-xs lg:text-sm justify-center items-start"
               >
                 <Icon size={18} className="mr-1" />
                 {title}: <span className="font-medium ml-1">{value}</span>
