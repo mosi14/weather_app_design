@@ -79,7 +79,7 @@ export default function TempAndDetails({
           </div>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center space-x-10 text-sm py-3">
+      <div className="flex flex-row items-center justify-center space-x-2 sm:space-x-5 md:space-x-10 text-xs md:text-xs lg:text-sm py-3 ">
         {horizontalDetails.map(({ id, title, Icon, value }) => (
           <div key={`horizontal_${id}`} className="flex flex-row items-center">
             <Icon size={30} />
