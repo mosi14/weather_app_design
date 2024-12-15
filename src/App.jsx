@@ -13,11 +13,18 @@ function App() {
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
+  const capitalizeFirst = (str) => {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   const getWeather = async () => {
-    const message = query.q ? query.q:'current location'
-    toast.info(`fetching weather data for ${message}`)
+    const cityName = query.q ? query.q : "current location";
+    toast.info(`Fetching weather data for ${capitalizeFirst(cityName)}`);
+
     const data = await getFormattedWeatherData({ ...query, units }).then(
       (data) => {
+        toast.success(`Fetched weather data for ${data.name}, ${data.country}`);
         setWeather(data);
       }
     );
@@ -50,7 +57,7 @@ function App() {
           <Forecast title="daily forecast" data={weather.daily} />
         </>
       )}
-      <ToastContainer autoClose={2500} hideProcessBar={rue} theme='colored'/>
+      <ToastContainer autoClose={2500} hideProcessBar={true} theme="colored" />
     </div>
   );
 }
